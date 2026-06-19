@@ -55,7 +55,7 @@ export default function HeroSection({
 
         {/* LEFT SIDE */}
 
-        <div>
+        <div className="hero-content">
 
           {/* BADGE */}
 
@@ -108,7 +108,7 @@ export default function HeroSection({
                 "720px",
 
               fontSize:
-                "clamp(54px,6vw,82px)",
+              "clamp(40px,7vw,82px)",
 
               lineHeight:
                 "1.02",
@@ -128,7 +128,7 @@ export default function HeroSection({
                 "rgba(255,255,255,.88)",
 
               fontSize:
-                "20px",
+                "clamp(16px,2vw,20px)",
 
               maxWidth:
                 "620px",
@@ -148,21 +148,7 @@ export default function HeroSection({
 
           {/* BUTTONS */}
 
-          <div
-            style={{
-              display:
-                "flex",
-
-              gap:
-                "16px",
-
-              marginTop:
-                "34px",
-
-              flexWrap:
-                "wrap"
-            }}
-          >
+          <div className="hero-actions">
 
             <button className="btn-primary">
 

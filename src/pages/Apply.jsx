@@ -626,22 +626,16 @@ function handleChange(e) {
 
       {showSuccess && (
 
-        <div
-          style={{
-            position: "fixed",
-            inset: 0,
-            background:
-              "rgba(0,0,0,.55)",
-            backdropFilter:
-              "blur(8px)",
-            display: "flex",
-            justifyContent:
-              "center",
-            alignItems:
-              "center",
-            zIndex: 9999
-          }}
-        >
+<div
+  style={{
+    display: "flex",
+    gap: "14px",
+    justifyContent:
+      "center",
+    flexWrap:
+      "wrap"
+  }}
+>
 
           <div
             style={{

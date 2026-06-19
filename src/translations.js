@@ -18,7 +18,7 @@ const translations = {
       "TalentBridge transforms recruitment through Microsoft automation, intelligent workflows, and seamless hiring experiences.",
 
     trusted:
-      "TRUSTED BY FORWARD-THINKING ORGANIZATIONS",
+      "2026 Graduation Project - Presented to",
 
     why:
       "WHY TALENTBRIDGE",

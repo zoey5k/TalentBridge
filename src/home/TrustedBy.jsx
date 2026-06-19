@@ -4,10 +4,6 @@ export default function TrustedBy({
 
 
   const companies = [
-    {
-      name: "Nestlé",
-      image: "/nestle.png"
-    },
 
     {
       name: "EUI",
@@ -33,9 +29,7 @@ export default function TrustedBy({
 
         <div className="marquee-track">
 
-          {[...companies,
-            ...companies,
-            ...companies
+          {[companies
           ].map((company, i) => (
 
             <div

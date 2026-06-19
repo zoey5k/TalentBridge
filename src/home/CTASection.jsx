@@ -10,20 +10,11 @@ export default function CTASection({
       <div className="container">
 
         <div
-          className="job-card"
-          style={{
-            textAlign:
-              "center",
-
-            padding:
-              "80px 50px",
-
-            borderRadius:
-              "40px",
-
-            background:
-              "linear-gradient(135deg, rgba(30,78,216,.08), rgba(96,165,250,.12))"
-          }}
+          className="job-card cta-card"
+style={{
+  background:
+    "linear-gradient(135deg, rgba(30,78,216,.08), rgba(96,165,250,.12))"
+}}
         >
 
           <Briefcase

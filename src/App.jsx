@@ -12,6 +12,8 @@ import Careers from "./pages/Careers";
 import Apply from "./pages/Apply";
 import Footer from "./home/Footer";
 import translations from "./translations";
+import Loader from "./components/Loader";
+import ScrollToTop from "./components/ScrollToTop";
 
 import {
   Sun,
@@ -29,64 +31,124 @@ function App() {
   const [language, setLanguage] =
     useState("EN");
 
-  const t =
-  translations[language];
-
   const [menuOpen, setMenuOpen] =
     useState(false);
 
   const [scrolled, setScrolled] =
     useState(false);
 
+  const [loading, setLoading] =
+    useState(true);
+
+  const t =
+    translations[language];
+
+  useEffect(() => {
+
+    document.documentElement.setAttribute(
+      "data-theme",
+      theme
+    );
+
+    document.documentElement.dir =
+      language === "AR"
+        ? "rtl"
+        : "ltr";
+
+    document.documentElement.lang =
+      language === "AR"
+        ? "ar"
+        : "en";
+
+    const handleScroll = () => {
+
+      setScrolled(
+        window.scrollY > 40
+      );
+
+    };
+
+    window.addEventListener(
+      "scroll",
+      handleScroll
+    );
+
+    return () =>
+      window.removeEventListener(
+        "scroll",
+        handleScroll
+      );
+
+  }, [theme, language]);
+
 useEffect(() => {
 
-document.documentElement
-  .setAttribute(
-    "data-theme",
-    theme
-  );
+  const startTime =
+    Date.now();
 
-document.documentElement.dir =
-  language === "AR"
-    ? "rtl"
-    : "ltr";
+  const minimumDisplayTime =
+    2500;
 
-document.documentElement.lang =
-  language === "AR"
-    ? "ar"
-    : "en";
+  const handleLoad = () => {
 
-const handleScroll = () => {
+    const elapsed =
+      Date.now() - startTime;
 
-setScrolled(
-window.scrollY > 40
-);
+    const remaining =
+      minimumDisplayTime - elapsed;
 
-};
+    setTimeout(() => {
 
-window.addEventListener(
-"scroll",
-handleScroll
-);
+      setLoading(false);
 
-return () =>
-window.removeEventListener(
-"scroll",
-handleScroll
-);
+    }, remaining > 0 ? remaining : 0);
 
-}, [theme, language]);
+  };
+
+  if (
+    document.readyState === "complete"
+  ) {
+
+    handleLoad();
+
+  } else {
+
+    window.addEventListener(
+      "load",
+      handleLoad
+    );
+
+  }
+
+  return () =>
+
+    window.removeEventListener(
+      "load",
+      handleLoad
+    );
+
+}, []);
+
+  if (loading) {
+
+    return <Loader />;
+
+  }
 
   return (
 
     <div className="app-shell">
 
+    <ScrollToTop />
+
       {/* NAVBAR */}
 
       <header
-      className={`navbar ${
-      scrolled ? "scrolled" : ""
-      }`}
+        className={`navbar ${
+          scrolled
+            ? "scrolled"
+            : ""
+        }`}
       >
 
         <div className="container nav-content">
@@ -104,40 +166,40 @@ handleScroll
           >
 
             <Link to="/">
-            {t.home}
+              {t.home}
             </Link>
 
             <Link to="/careers">
-            {t.careers}
+              {t.careers}
             </Link>
 
-<button
-  className="nav-link-btn"
-  onClick={() => {
+            <button
+              className="nav-link-btn"
+              onClick={() => {
 
-    if (
-      window.location.pathname !== "/"
-    ) {
+                if (
+                  window.location.pathname !== "/"
+                ) {
 
-      window.location.href =
-        "/#pricing";
+                  window.location.href =
+                    "/#pricing";
 
-      return;
-    }
+                  return;
+                }
 
-    document
-      .getElementById(
-        "pricing"
-      )
-      ?.scrollIntoView({
-        behavior:
-          "smooth"
-      });
+                document
+                  .getElementById(
+                    "pricing"
+                  )
+                  ?.scrollIntoView({
+                    behavior:
+                      "smooth"
+                  });
 
-  }}
->
-  Pricing
-</button>
+              }}
+            >
+              Pricing
+            </button>
 
           </nav>
 
@@ -173,7 +235,9 @@ handleScroll
               }
             </button>
 
-            <button className="btn-secondary">
+            <button
+              className="btn-secondary"
+            >
               {t.login}
             </button>
 
@@ -185,9 +249,10 @@ handleScroll
                 )
               }
             >
-              {menuOpen
-                ? <X />
-                : <Menu />
+              {
+                menuOpen
+                  ? <X />
+                  : <Menu />
               }
             </button>
 
@@ -199,23 +264,29 @@ handleScroll
 
       {/* ROUTES */}
 
-            <main>
+      <main>
 
         <Routes>
 
           <Route
             path="/"
-            element={<Home t={t} />}
+            element={
+              <Home t={t} />
+            }
           />
 
           <Route
             path="/careers"
-            element={<Careers />}
+            element={
+              <Careers />
+            }
           />
 
           <Route
             path="/apply"
-            element={<Apply />}
+            element={
+              <Apply />
+            }
           />
 
         </Routes>

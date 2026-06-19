@@ -112,7 +112,7 @@ export default function FeaturesSection({
               className="job-card"
               style={{
                 padding:
-                  "36px",
+                  "28px",
 
                 borderRadius:
                   "30px",

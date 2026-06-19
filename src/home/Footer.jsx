@@ -7,21 +7,9 @@ export default function Footer() {
     <footer className="footer">
 
       <div
-        className="container"
-        style={{
-          display:
-            "grid",
-
-          gridTemplateColumns:
-            "2fr 1fr 1fr",
-
-          gap:
-            "50px",
-
-          padding:
-            "80px 0"
-        }}
-      >
+  className="container footer-grid"
+>
+    
 
         {/* LEFT */}
 
@@ -40,7 +28,7 @@ export default function Footer() {
           <p
             style={{
               maxWidth:
-                "420px",
+                "100%",
 
               lineHeight:
                 1.8

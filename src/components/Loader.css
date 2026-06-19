@@ -1,0 +1,69 @@
+.loader-screen {
+
+  position: fixed;
+  inset: 0;
+
+  background: var(--bg);
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  z-index: 99999;
+
+  animation:
+    fadeIn .3s ease;
+}
+
+.loader-logo {
+
+  width: 90px;
+  height: 90px;
+
+  animation:
+    spinLogo 1.5s linear infinite;
+}
+
+@keyframes spinLogo {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+@keyframes fadeIn {
+
+  from {
+
+    opacity: 0;
+
+  }
+
+  to {
+
+    opacity: 1;
+
+  }
+
+}
+
+.loader-screen {
+
+  animation:
+    fadeIn .3s ease;
+
+}
+
+.loader-logo {
+
+  animation:
+    spinLogo 1.5s linear infinite;
+
+}

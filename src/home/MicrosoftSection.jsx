@@ -110,7 +110,7 @@ export default function MicrosoftSection({
             display: "grid",
 
             gridTemplateColumns:
-              "repeat(3, 1fr)",
+  "repeat(auto-fit, minmax(260px,1fr))",
 
             gap: "28px"
           }}
