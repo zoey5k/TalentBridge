@@ -38,11 +38,12 @@ export default function CVIntelligenceSection({ t }) {
                         strokeDasharray={`${2 * Math.PI * 52}`}
                         strokeDashoffset={`${2 * Math.PI * 52 * (1 - 0.88)}`}
                         transform="rotate(-90 60 60)"
+                        className="cv-score-arc"
                       />
                     </svg>
                     <div className="cv-score-center">
                       <span className="cv-score-number">88</span>
-                      <span className="cv-score-label">{t.cvScore}</span>
+                      <span className="cv-score-label">Match</span>
                     </div>
                   </div>
                 </div>
