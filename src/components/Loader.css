@@ -1,69 +1,92 @@
 .loader-screen {
-
   position: fixed;
   inset: 0;
-
   background: var(--bg);
-
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   align-items: center;
-
   z-index: 99999;
+  animation: fadeIn .3s ease;
+}
 
-  animation:
-    fadeIn .3s ease;
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.loader-logo-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .loader-logo {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+}
 
-  width: 90px;
-  height: 90px;
+.loader-spinner {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  animation: spinLogo .8s linear infinite;
+}
 
-  animation:
-    spinLogo 1.5s linear infinite;
+.loader-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -1px;
+}
+
+.loader-title svg {
+  color: var(--accent);
+}
+
+.loader-subtitle {
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  animation: pulse 1.5s ease-in-out infinite;
 }
 
 @keyframes spinLogo {
-
   from {
     transform: rotate(0deg);
   }
-
   to {
     transform: rotate(360deg);
   }
-
 }
 
 @keyframes fadeIn {
-
   from {
-
     opacity: 0;
-
   }
-
   to {
-
     opacity: 1;
-
   }
-
 }
 
-.loader-screen {
-
-  animation:
-    fadeIn .3s ease;
-
-}
-
-.loader-logo {
-
-  animation:
-    spinLogo 1.5s linear infinite;
-
+@keyframes pulse {
+  0%, 100% {
+    opacity: .6;
+  }
+  50% {
+    opacity: 1;
+  }
 }

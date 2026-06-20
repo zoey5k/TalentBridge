@@ -1,63 +1,36 @@
-import { Briefcase } from "lucide-react";
-export default function CTASection({
-  t
-}) {
+import { Briefcase, ArrowRight, Info } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+
+export default function CTASection({ t }) {
+  const navigate = useNavigate();
 
   return (
-
     <section className="section">
-
       <div className="container">
-
-        <div
-          className="job-card cta-card"
-style={{
-  background:
-    "linear-gradient(135deg, rgba(30,78,216,.08), rgba(96,165,250,.12))"
-}}
-        >
-
-          <Briefcase
-            size={56}
-            style={{
-              color:
-                "var(--primary)",
-
-              marginBottom:
-                "22px"
-            }}
-          />
-
-          <h2>
-            {t.ctaTitle}
-          </h2>
-
-          <p
-            style={{
-              maxWidth:
-                "700px",
-
-              margin:
-                "20px auto"
-            }}
-          >
-            {t.ctaText}
-          </p>
-
-          <button
-            className="btn-primary"
-            style={{
-              marginTop:
-                "20px"
-            }}
-          >
-            Get Started
-          </button>
-
+        <div className="cta-card">
+          <div className="cta-icon">
+            <Briefcase size={48} />
+          </div>
+          <h2>{t.ctaTitle}</h2>
+          <p>{t.ctaText}</p>
+          <div className="cta-actions">
+            <button
+              className="btn-primary btn-glow"
+              onClick={() => navigate("/careers")}
+            >
+              Explore Careers
+              <ArrowRight size={18} className="btn-arrow" />
+            </button>
+            <button
+              className="btn-secondary"
+              onClick={() => navigate("/about")}
+            >
+              <Info size={16} />
+              Learn More
+            </button>
+          </div>
         </div>
-
       </div>
-
     </section>
   );
 }

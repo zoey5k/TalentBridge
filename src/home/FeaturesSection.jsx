@@ -2,183 +2,64 @@ import {
   Workflow,
   Clock3,
   BarChart3,
-  ShieldCheck
+  ShieldCheck,
 } from "lucide-react";
 
-export default function FeaturesSection({
-  t
-}) {
-
+export default function FeaturesSection({ t }) {
   const features = [
+    {
+      icon: <Workflow size={28} />,
+      title: t.smartAutomation,
+      text: t.smartAutomationText,
+      gradient: "linear-gradient(135deg, #2563EB, #60A5FA)",
+    },
+    {
+      icon: <Clock3 size={28} />,
+      title: t.fasterHiring,
+      text: t.fasterHiringText,
+      gradient: "linear-gradient(135deg, #7C3AED, #A78BFA)",
+    },
+    {
+      icon: <BarChart3 size={28} />,
+      title: t.analytics,
+      text: t.analyticsText,
+      gradient: "linear-gradient(135deg, #059669, #34D399)",
+    },
+    {
+      icon: <ShieldCheck size={28} />,
+      title: t.ecosystem,
+      text: t.ecosystemText,
+      gradient: "linear-gradient(135deg, #DC2626, #F87171)",
+    },
+  ];
 
-  {
-    icon: <Workflow size={34} />,
-    title: t.smartAutomation,
-    text: t.smartAutomationText
-  },
-
-  {
-    icon: <Clock3 size={34} />,
-    title: t.fasterHiring,
-    text: t.fasterHiringText
-  },
-
-  {
-    icon: <BarChart3 size={34} />,
-    title: t.analytics,
-    text: t.analyticsText
-  },
-
-  {
-    icon: <ShieldCheck size={34} />,
-    title: t.ecosystem,
-    text: t.ecosystemText
-  }
-
-];
   return (
-
     <section className="section">
-
       <div className="container">
-
-        <div
-          style={{
-            textAlign:
-              "center",
-
-            marginBottom:
-              "60px"
-          }}
-        >
-
-          <span
-            style={{
-              color:
-                "var(--primary)",
-
-              fontWeight:
-                "700"
-            }}
-          >
-            {t.why}
-          </span>
-
-          <h2
-            style={{
-              marginTop:
-                "14px"
-            }}
-          >
-            {t.whyTitle}
-          </h2>
-
-          <p
-            style={{
-              maxWidth:
-                "700px",
-
-              margin:
-                "18px auto 0"
-            }}
-          >
-            A modern recruitment
-            ecosystem powered by
-            automation, analytics,
-            and seamless Microsoft
-            integration.
+        <div className="section-header-center">
+          <span className="section-badge">{t.why}</span>
+          <h2>{t.whyTitle}</h2>
+          <p>
+            A modern recruitment ecosystem powered by automation, analytics, and
+            seamless Microsoft integration.
           </p>
-
         </div>
 
-        <div
-          style={{
-            display:
-              "grid",
-
-            gridTemplateColumns:
-              "repeat(auto-fit,minmax(260px,1fr))",
-
-            gap:
-              "28px"
-          }}
-        >
-
-          {features.map(
-            (item) => (
-
-            <div
-              key={item.title}
-              className="job-card"
-              style={{
-                padding:
-                  "28px",
-
-                borderRadius:
-                  "30px",
-
-                textAlign:
-                  "center",
-
-                transition:
-                  "all .3s ease"
-              }}
-            >
-
+        <div className="features-grid">
+          {features.map((item) => (
+            <div key={item.title} className="feature-card">
               <div
-                style={{
-                  width:
-                    "82px",
-
-                  height:
-                    "82px",
-
-                  borderRadius:
-                    "24px",
-
-                  display:
-                    "flex",
-
-                  alignItems:
-                    "center",
-
-                  justifyContent:
-                    "center",
-
-                  margin:
-                    "0 auto 24px",
-
-                  background:
-                    "linear-gradient(to bottom right, rgba(96,165,250,.12), rgba(147,197,253,.18))",
-
-                  color:
-                    "var(--primary)"
-                }}
+                className="feature-icon-wrap"
+                style={{ background: item.gradient }}
               >
                 {item.icon}
               </div>
-
-              <h3>
-                {item.title}
-              </h3>
-
-              <p
-                style={{
-                  marginTop:
-                    "14px"
-                }}
-              >
-                {item.text}
-              </p>
-
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
             </div>
-
           ))}
-
         </div>
-
       </div>
-
     </section>
   );
 }

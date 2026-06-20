@@ -914,5 +914,3 @@ export function getWelcomeSuggestions(data = faqData) {
     .map((id) => data.find((f) => f.id === id))
     .filter(Boolean);
 }
-</task_progress>
-</write_to_file>
