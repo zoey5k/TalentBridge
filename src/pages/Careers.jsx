@@ -23,9 +23,19 @@ export default function Careers({ t }) {
         const data = await response.json();
 
         setTimeout(() => {
-          setJobs(Array.isArray(data) ? data : []);
+
+          const filteredJobs = Array.isArray(data)
+            ? data.filter(
+                (job) =>
+                  job.Published_x003f_?.Value === "Publish"
+              )
+            : [];
+
+          setJobs(filteredJobs);
           setLoading(false);
+
         }, 1200);
+
       } catch (error) {
         console.error(error);
         setLoading(false);
