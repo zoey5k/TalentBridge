@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
-import { Sparkles } from "lucide-react";
 
-export default function Footer() {
+export default function Footer({ t }) {
   return (
     <footer className="footer">
       <div className="container">
@@ -9,51 +8,50 @@ export default function Footer() {
           {/* LEFT - Brand */}
           <div className="footer-brand">
             <div className="footer-logo">
-              <Sparkles size={22} />
+              <div className="footer-logo-mark" />
               TalentBridge
             </div>
             <p className="footer-description">
-              Transforming recruitment through automation, Microsoft integration,
-              and intelligent hiring experiences built for modern organizations.
+              {t.footerDescription}
             </p>
             <div className="egypt-badge">
               <span>🇪🇬</span>
-              <span>Proudly Built in Egypt</span>
+              <span>{t.builtInEgypt}</span>
             </div>
           </div>
 
           {/* Product */}
           <div className="footer-col">
-            <h4>Product</h4>
+            <h4>{t.productFeatures}</h4>
             <div className="footer-links">
-              <Link to="/">Features</Link>
-              <Link to="/pricing">Pricing</Link>
-              <Link to="/careers">Careers</Link>
+              <Link to="/">{t.productFeatures}</Link>
+              <Link to="/pricing">{t.productPricing}</Link>
+              <Link to="/careers">{t.productCareers}</Link>
             </div>
           </div>
 
           {/* Company */}
           <div className="footer-col">
-            <h4>Company</h4>
+            <h4>{t.companyAbout}</h4>
             <div className="footer-links">
-              <Link to="/about">About</Link>
-              <Link to="/careers">Contact</Link>
+              <Link to="/about">{t.companyAbout}</Link>
+              <Link to="/careers">{t.companyContact}</Link>
             </div>
           </div>
 
           {/* Resources */}
           <div className="footer-col">
-            <h4>Resources</h4>
+            <h4>{t.resourcesFAQ}</h4>
             <div className="footer-links">
-              <Link to="/about">FAQ</Link>
-              <Link to="/about">Privacy</Link>
+              <Link to="/about">{t.resourcesFAQ}</Link>
+              <Link to="/about">{t.resourcesPrivacy}</Link>
             </div>
           </div>
         </div>
 
         {/* BOTTOM */}
         <div className="footer-bottom">
-          <p>© 2026 TalentBridge. Built for the future of recruitment in Egypt.</p>
+          <p>{t.copyright}</p>
         </div>
       </div>
     </footer>

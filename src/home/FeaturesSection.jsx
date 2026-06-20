@@ -1,40 +1,33 @@
-import {
-  Workflow,
-  Clock3,
-  BarChart3,
-  ShieldCheck,
-} from "lucide-react";
-
 export default function FeaturesSection({ t }) {
   const features = [
     {
-      icon: <Workflow size={28} />,
-      title: t.smartAutomation,
-      text: t.smartAutomationText,
-      gradient: "linear-gradient(135deg, #2563EB, #60A5FA)",
+      title: t.valueEndToEnd,
+      text: t.valueEndToEndText,
     },
     {
-      icon: <Clock3 size={28} />,
-      title: t.fasterHiring,
-      text: t.fasterHiringText,
-      gradient: "linear-gradient(135deg, #7C3AED, #A78BFA)",
+      title: t.valueCandidateMatching,
+      text: t.valueCandidateMatchingText,
     },
     {
-      icon: <BarChart3 size={28} />,
-      title: t.analytics,
-      text: t.analyticsText,
-      gradient: "linear-gradient(135deg, #059669, #34D399)",
+      title: t.valueInterviewCoord,
+      text: t.valueInterviewCoordText,
     },
     {
-      icon: <ShieldCheck size={28} />,
-      title: t.ecosystem,
-      text: t.ecosystemText,
-      gradient: "linear-gradient(135deg, #DC2626, #F87171)",
+      title: t.valueDataDriven,
+      text: t.valueDataDrivenText,
+    },
+    {
+      title: t.valueCollaborative,
+      text: t.valueCollaborativeText,
+    },
+    {
+      title: t.valueTalentPipeline,
+      text: t.valueTalentPipelineText,
     },
   ];
 
   return (
-    <section className="section">
+    <section className="section features-section-new">
       <div className="container">
         <div className="section-header-center">
           <span className="section-badge">{t.why}</span>
@@ -45,17 +38,14 @@ export default function FeaturesSection({ t }) {
           </p>
         </div>
 
-        <div className="features-grid">
-          {features.map((item) => (
-            <div key={item.title} className="feature-card">
-              <div
-                className="feature-icon-wrap"
-                style={{ background: item.gradient }}
-              >
-                {item.icon}
+        <div className="features-grid-new">
+          {features.map((item, index) => (
+            <div key={index} className="feature-card-new">
+              <div className="feature-card-new-number">{String(index + 1).padStart(2, "0")}</div>
+              <div className="feature-card-new-content">
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
               </div>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
             </div>
           ))}
         </div>

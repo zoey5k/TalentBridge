@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Loader from "../components/Loader";
 
-export default function Careers() {
+export default function Careers({ t }) {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -73,9 +73,9 @@ export default function Careers() {
             letterSpacing: "1px",
           }}
         >
-          CAREERS
+          {t?.careers?.toUpperCase?.() || "CAREERS"}
         </span>
-        <h1 style={{ marginTop: "12px" }}>Actively Recruiting</h1>
+        <h1 style={{ marginTop: "12px" }}>{t?.careersTitle || "Actively Recruiting"}</h1>
         <p
           style={{
             color: "var(--text-secondary)",
@@ -83,14 +83,14 @@ export default function Careers() {
             margin: "0 auto",
           }}
         >
-          Explore exciting career opportunities and become part of our journey.
+          {t?.careersSubtitle || "Explore exciting career opportunities and become part of our journey."}
         </p>
       </div>
 
       {jobs.length === 0 ? (
         <div style={{ textAlign: "center", padding: "60px 0" }}>
-          <h3>No Active Recruiting</h3>
-          <p>Check back again soon.</p>
+          <h3>{t?.careersEmpty || "No Active Recruiting"}</h3>
+          <p>{t?.careersEmptyText || "Check back again soon."}</p>
         </div>
       ) : (
         <div className="careers-grid">
@@ -107,17 +107,17 @@ export default function Careers() {
               <h3 className="career-title">{job?.Title}</h3>
 
               <div className="career-meta">
-                <span className="career-meta-tag type">Full-Time</span>
-                <span className="career-meta-tag location">Egypt</span>
-                <span className="career-meta-tag level">Entry–Mid Level</span>
+                <span className="career-meta-tag type">{t?.careersType || "Full-Time"}</span>
+                <span className="career-meta-tag location">{t?.careersLocation || "Egypt"}</span>
+                <span className="career-meta-tag level">{t?.careersLevel || "Entry–Mid Level"}</span>
               </div>
 
-              <h5 className="career-desc-label">Job Description:</h5>
+              <h5 className="career-desc-label">{t?.careersDescription || "Job Description:"}</h5>
               <p className="career-description">
                 {job?.Position_x0020_Description || "No description provided."}
               </p>
 
-              <p className="career-powered">Powered by TalentBridge</p>
+              <p className="career-powered">{t?.careersPowered || "Powered by TalentBridge"}</p>
 
               <button
                 className="btn-primary"
@@ -128,7 +128,7 @@ export default function Careers() {
                   )
                 }
               >
-                Apply Now
+                {t?.careersApply || "Apply Now"}
               </button>
             </div>
           ))}

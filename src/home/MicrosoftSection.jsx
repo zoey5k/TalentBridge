@@ -8,34 +8,34 @@ import outlookLogo from "../assets/outlook.png";
 export default function MicrosoftSection({ t }) {
   const ecosystem = [
     {
-      name: "PowerApps",
+      name: t.msPowerApps,
       image: powerAppsLogo,
-      description: "Create and manage recruitment requests.",
+      description: t.msPowerAppsDesc,
     },
     {
-      name: "Power Automate",
+      name: t.msPowerAutomate,
       image: automateLogo,
-      description: "Automate approvals and workflows.",
+      description: t.msPowerAutomateDesc,
     },
     {
-      name: "SharePoint",
+      name: t.msSharePoint,
       image: sharepointLogo,
-      description: "Centralized HR and candidate storage.",
+      description: t.msSharePointDesc,
     },
     {
-      name: "Microsoft Teams",
+      name: t.msTeams,
       image: teamsLogo,
-      description: "Interview scheduling and collaboration.",
+      description: t.msTeamsDesc,
     },
     {
-      name: "Power BI",
+      name: t.msPowerBI,
       image: powerBILogo,
-      description: "Recruitment analytics and KPIs.",
+      description: t.msPowerBIDesc,
     },
     {
-      name: "Outlook",
+      name: t.msOutlook,
       image: outlookLogo,
-      description: "Automated interview and hiring emails.",
+      description: t.msOutlookDesc,
     },
   ];
 

@@ -1,15 +1,14 @@
-import { Check, Sparkles, ArrowRight } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-export default function Pricing() {
+export default function Pricing({ t }) {
   const navigate = useNavigate();
 
   const plans = [
     {
-      title: "Starter",
-      price: "EGP 3,999",
-      description:
-        "For startups and small businesses beginning digital recruitment.",
+      title: t?.pricingStarter || "Starter",
+      price: t?.pricingStarterPrice || "EGP 3,999",
+      description: t?.pricingStarterDesc || "For startups and small businesses beginning digital recruitment.",
       features: [
         "Job Posting Management",
         "Candidate Tracking",
@@ -17,14 +16,13 @@ export default function Pricing() {
         "Email Notifications",
         "Basic Analytics",
       ],
-      button: "Start Now",
+      button: t?.pricingStart || "Start Now",
     },
     {
-      title: "Professional",
-      price: "EGP 9,999",
+      title: t?.pricingProfessional || "Professional",
+      price: t?.pricingProfessionalPrice || "EGP 9,999",
       popular: true,
-      description:
-        "Built for growing HR teams needing automation and analytics.",
+      description: t?.pricingProfessionalDesc || "Built for growing HR teams needing automation and analytics.",
       features: [
         "Everything in Starter",
         "Power BI Dashboards",
@@ -34,13 +32,12 @@ export default function Pricing() {
         "Microsoft Teams Integration",
         "Advanced Reporting",
       ],
-      button: "Get Started",
+      button: t?.pricingGetStarted || "Get Started",
     },
     {
-      title: "Enterprise",
-      price: "Custom",
-      description:
-        "For enterprises and government organizations requiring scale.",
+      title: t?.pricingEnterprise || "Enterprise",
+      price: t?.pricingEnterprisePrice || "Custom",
+      description: t?.pricingEnterpriseDesc || "For enterprises and government organizations requiring scale.",
       features: [
         "Everything in Professional",
         "AI Candidate Screening",
@@ -50,7 +47,7 @@ export default function Pricing() {
         "Dedicated Support",
         "SLA & Security Compliance",
       ],
-      button: "Book Demo",
+      button: t?.pricingBookDemo || "Book Demo",
     },
   ];
 
@@ -59,15 +56,9 @@ export default function Pricing() {
       <section className="pricing-hero">
         <div className="container">
           <div className="pricing-hero-content">
-            <div className="pricing-badge">
-              <Sparkles size={18} />
-              Pricing Plans
-            </div>
-            <h1>Simple, Transparent Pricing</h1>
-            <p>
-              Choose the plan that best fits your hiring needs and scale your
-              recruitment effortlessly.
-            </p>
+            <div className="pricing-badge">{t?.pricingPlans || "Pricing Plans"}</div>
+            <h1>{t?.pricingTitle || "Simple, Transparent Pricing"}</h1>
+            <p>{t?.pricingSubtitle || "Choose the plan that best fits your hiring needs."}</p>
           </div>
         </div>
       </section>
@@ -81,13 +72,13 @@ export default function Pricing() {
                 className={`pricing-card-new ${plan.popular ? "popular" : ""}`}
               >
                 {plan.popular && (
-                  <div className="pricing-popular-badge">Most Popular</div>
+                  <div className="pricing-popular-badge">{t?.pricingPopular || "Most Popular"}</div>
                 )}
                 <h3>{plan.title}</h3>
                 <div className="pricing-amount">
                   <span className="pricing-price">{plan.price}</span>
-                  {plan.price !== "Custom" && (
-                    <span className="pricing-period">/month</span>
+                  {(t?.pricingMonthly || "/month") && plan.price !== (t?.pricingEnterprisePrice || "Custom") && (
+                    <span className="pricing-period">{t?.pricingMonthly || "/month"}</span>
                   )}
                 </div>
                 <p className="pricing-desc">{plan.description}</p>
@@ -114,35 +105,23 @@ export default function Pricing() {
 
       <section className="pricing-faq-section">
         <div className="container">
-          <h2>Frequently Asked Questions</h2>
+          <h2>{t?.pricingFaqTitle || "Frequently Asked Questions"}</h2>
           <div className="pricing-faq-grid">
             <div className="pricing-faq-item">
-              <h4>Can I switch plans later?</h4>
-              <p>
-                Yes, you can upgrade or downgrade your plan at any time. Changes
-                take effect immediately.
-              </p>
+              <h4>{t?.pricingFaq1q || "Can I switch plans later?"}</h4>
+              <p>{t?.pricingFaq1a || "Yes, you can upgrade or downgrade your plan at any time."}</p>
             </div>
             <div className="pricing-faq-item">
-              <h4>Is there a free trial?</h4>
-              <p>
-                We offer a 14-day free trial on all plans. No credit card
-                required.
-              </p>
+              <h4>{t?.pricingFaq2q || "Is there a free trial?"}</h4>
+              <p>{t?.pricingFaq2a || "We offer a 14-day free trial on all plans."}</p>
             </div>
             <div className="pricing-faq-item">
-              <h4>Do you offer custom pricing?</h4>
-              <p>
-                Yes, Enterprise plans are customized based on your organization's
-                size and requirements.
-              </p>
+              <h4>{t?.pricingFaq3q || "Do you offer custom pricing?"}</h4>
+              <p>{t?.pricingFaq3a || "Yes, Enterprise plans are customized based on your requirements."}</p>
             </div>
             <div className="pricing-faq-item">
-              <h4>What support is included?</h4>
-              <p>
-                Starter includes email support. Professional includes priority
-                support. Enterprise includes a dedicated account manager.
-              </p>
+              <h4>{t?.pricingFaq4q || "What support is included?"}</h4>
+              <p>{t?.pricingFaq4a || "Starter includes email support. Professional includes priority support."}</p>
             </div>
           </div>
         </div>

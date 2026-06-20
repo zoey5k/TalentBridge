@@ -1,9 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import {
-  MessageCircle,
   X,
   Send,
-  Sparkles,
   ArrowRight,
 } from "lucide-react";
 import {
@@ -14,9 +12,10 @@ import {
   getWelcomeSuggestions,
   getFAQsByCategory,
 } from "../data/faqData";
+import talentBridgeLogo from "../assets/NewTalentBridgeLogo.png";
 import "./AIAssistant.css";
 
-export default function AIAssistant() {
+export default function AIAssistant({ t }) {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
@@ -34,7 +33,7 @@ export default function AIAssistant() {
       setMessages([
         {
           type: "bot",
-          text: "👋 Hi! I'm the TalentBridge AI Assistant. I can help you learn about our platform, features, Microsoft integrations, careers, and more. What would you like to know?",
+          text: t?.aiWelcome || "Welcome to TalentBridge Assistant. I can help you learn about our platform, features, Microsoft integrations, careers, and more. What would you like to know?",
           suggestions: suggestions.map((s) => ({
             id: s.id,
             question: s.question,
@@ -42,7 +41,7 @@ export default function AIAssistant() {
         },
       ]);
     }
-  }, [isOpen, hasGreeted]);
+  }, [isOpen, hasGreeted, t]);
 
   // Auto-scroll to bottom
   useEffect(() => {
@@ -60,7 +59,6 @@ export default function AIAssistant() {
   const askQuestion = (question, faqId = null) => {
     if (!question.trim()) return;
 
-    // Add user message
     setMessages((prev) => [
       ...prev,
       { type: "user", text: question },
@@ -69,7 +67,6 @@ export default function AIAssistant() {
     setInput("");
     setIsTyping(true);
 
-    // Simulate thinking time for natural feel
     setTimeout(() => {
       let faq;
 
@@ -100,7 +97,7 @@ export default function AIAssistant() {
           ...prev,
           {
             type: "bot",
-            text: "I'm sorry, I don't have information about that specific topic. I can help you with questions about TalentBridge's features, Microsoft integrations, recruitment process, pricing, security, careers, and future roadmap. Try asking one of the suggested questions below, or browse by category.",
+            text: t?.aiNoResult || "I don't have information about that specific topic. I can help with questions about TalentBridge's features, Microsoft integrations, recruitment process, pricing, security, careers, and future roadmap.",
             suggestions: getWelcomeSuggestions().map((s) => ({
               id: s.id,
               question: s.question,
@@ -110,16 +107,14 @@ export default function AIAssistant() {
       }
 
       setIsTyping(false);
-    }, 600 + Math.random() * 400);
+    }, 600);
   };
 
-  // Handle form submit
   const handleSubmit = (e) => {
     e.preventDefault();
     askQuestion(input);
   };
 
-  // Handle category selection
   const handleCategoryClick = (categoryId) => {
     setActiveCategory(categoryId);
     const categoryFaqs = faqCategories.find((c) => c.id === categoryId);
@@ -161,10 +156,7 @@ export default function AIAssistant() {
         aria-label="Open AI Assistant"
       >
         <div className="ai-fab-pulse" />
-        <MessageCircle size={26} />
-        <span className="ai-fab-badge">
-          <Sparkles size={12} />
-        </span>
+        <img src={talentBridgeLogo} alt="Talent Bridge" className="ai-fab-logo" />
       </button>
 
       {/* Chat Window */}
@@ -173,13 +165,13 @@ export default function AIAssistant() {
         <div className="ai-chat-header">
           <div className="ai-chat-header-info">
             <div className="ai-chat-avatar">
-              <Sparkles size={18} />
+              <img src={talentBridgeLogo} alt="Talent Bridge" className="ai-chat-avatar-logo" />
             </div>
             <div>
-              <h4>TalentBridge Assistant</h4>
+              <h4>{t?.aiTitle || "TalentBridge Assistant"}</h4>
               <span className="ai-status">
                 <span className="ai-status-dot" />
-                Online
+                {t?.aiOnline || "Online"}
               </span>
             </div>
           </div>
@@ -198,13 +190,12 @@ export default function AIAssistant() {
             <div key={i} className={`ai-message ai-message-${msg.type}`}>
               {msg.type === "bot" && (
                 <div className="ai-message-avatar">
-                  <Sparkles size={14} />
+                  <img src={talentBridgeLogo} alt="Talent Bridge" className="ai-message-avatar-logo" />
                 </div>
               )}
               <div className="ai-message-content">
                 <p>{msg.text}</p>
 
-                {/* Suggestions */}
                 {msg.suggestions && msg.suggestions.length > 0 && (
                   <div className="ai-suggestions">
                     {msg.suggestions.map((sug) => (
@@ -223,11 +214,10 @@ export default function AIAssistant() {
             </div>
           ))}
 
-          {/* Typing indicator */}
           {isTyping && (
             <div className="ai-message ai-message-bot">
               <div className="ai-message-avatar">
-                <Sparkles size={14} />
+                <img src={talentBridgeLogo} alt="Talent Bridge" className="ai-message-avatar-logo" />
               </div>
               <div className="ai-typing">
                 <span />
@@ -264,7 +254,7 @@ export default function AIAssistant() {
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Ask about TalentBridge..."
+            placeholder={t?.aiPlaceholder || "Ask about TalentBridge..."}
             disabled={isTyping}
           />
           <button
@@ -278,7 +268,7 @@ export default function AIAssistant() {
 
         {/* Footer */}
         <div className="ai-chat-footer">
-          <span>Powered by TalentBridge FAQ Knowledge Base</span>
+          <span>{t?.aiPowered || "Powered by TalentBridge Knowledge Base"}</span>
         </div>
       </div>
 

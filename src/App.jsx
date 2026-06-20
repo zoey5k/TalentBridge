@@ -20,8 +20,8 @@ import {
   Globe,
   Menu,
   X,
-  Sparkles,
 } from "lucide-react";
+import talentBridgeLogo from "./assets/NewTalentBridgeLogo.png";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -92,8 +92,8 @@ function App() {
         <div className="container nav-content">
           <Link to="/" className="logo-link" onClick={closeMenu}>
             <div className="logo">
-              <Sparkles size={24} className="logo-icon" />
-              TalentBridge
+              <img src={talentBridgeLogo} alt="Talent Bridge" className="logo-img" />
+              Talent Bridge
             </div>
           </Link>
 
@@ -117,14 +117,14 @@ function App() {
               className={isActive("/pricing") ? "active-link" : ""}
               onClick={closeMenu}
             >
-              Pricing
+              {t.pricing}
             </Link>
             <Link
               to="/about"
               className={isActive("/about") ? "active-link" : ""}
               onClick={closeMenu}
             >
-              About
+              {t.about}
             </Link>
           </nav>
 
@@ -146,8 +146,6 @@ function App() {
               {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
             </button>
 
-            <button className="btn-secondary nav-login-btn">{t.login}</button>
-
             <button
               className="mobile-menu"
               onClick={() => setMenuOpen(!menuOpen)}
@@ -163,15 +161,15 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home t={t} />} />
-          <Route path="/careers" element={<Careers />} />
+          <Route path="/careers" element={<Careers t={t} />} />
           <Route path="/apply" element={<Apply />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/pricing" element={<Pricing t={t} />} />
+          <Route path="/about" element={<About t={t} />} />
         </Routes>
       </main>
 
-      <Footer />
-      <AIAssistant />
+      <Footer t={t} />
+      <AIAssistant t={t} />
     </div>
   );
 }

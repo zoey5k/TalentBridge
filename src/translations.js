@@ -1,153 +1,386 @@
 const translations = {
-
   EN: {
-
+    // Navigation
     home: "Home",
     careers: "Careers",
     pricing: "Pricing",
-    login: "Login",
-    getStarted: "Get Started",
+    about: "About",
+    contact: "Contact",
 
-    heroBadge:
-      "Recruitment Reimagined",
+    // Hero
+    heroBadge: "Enterprise Recruitment Platform",
+    heroTitle: "Smarter Hiring. Faster Decisions. Better Talent.",
+    heroSubtitle: "TalentBridge transforms recruitment through Microsoft automation, intelligent workflows, and seamless hiring experiences.",
+    explorePlatform: "Explore Platform",
+    viewPricing: "View Pricing",
 
-    heroTitle:
-      "Smarter Hiring. Faster Decisions. Better Talent.",
+    // Why Section
+    why: "WHY TALENTBRIDGE",
+    whyTitle: "Recruitment Built For Modern Teams",
 
-    heroSubtitle:
-      "TalentBridge transforms recruitment through Microsoft automation, intelligent workflows, and seamless hiring experiences.",
+    smartAutomation: "Smart Automation",
+    smartAutomationText: "Automate recruitment workflows using Power Automate, eliminating manual tasks and reducing time-to-hire.",
+    fasterHiring: "Faster Hiring",
+    fasterHiringText: "Accelerate approvals and hiring processes with automated approval routing and instant notifications.",
+    analytics: "Recruitment Analytics",
+    analyticsText: "Gain hiring insights with Power BI dashboards and real-time KPI tracking for data-driven decisions.",
+    ecosystem: "Microsoft Ecosystem",
+    ecosystemText: "Integrated with Teams, SharePoint, Outlook and Power BI for a unified recruitment experience.",
 
-    trusted:
-      "2026 Graduation Project - Presented to",
+    // CV Intelligence
+    cvTitle: "CV Intelligence Engine",
+    cvSubtitle: "AI-Assisted Candidate Evaluation & Matching",
+    cvDescription: "Our intelligent matching engine analyzes candidate profiles against job requirements, generating compatibility scores and surfacing the strongest candidates.",
+    cvScore: "Compatibility Score",
+    cvMatch: "Match Analysis",
+    cvRank: "Candidate Ranking",
 
-    why:
-      "WHY TALENTBRIDGE",
+    // Value Pillars (expanded)
+    valueEndToEnd: "End-to-End Recruitment Operations",
+    valueEndToEndText: "Manage the complete hiring lifecycle from job requisition to offer acceptance within a single unified platform.",
+    valueCandidateMatching: "Intelligent Candidate Matching",
+    valueCandidateMatchingText: "AI-powered profile analysis that compares candidate qualifications against position requirements with precision.",
+    valueInterviewCoord: "Automated Interview Coordination",
+    valueInterviewCoordText: "Seamless scheduling through Microsoft Teams integration with automated calendar coordination and reminders.",
+    valueDataDriven: "Data-Driven Hiring Decisions",
+    valueDataDrivenText: "Real-time analytics and Power BI dashboards that provide actionable insights into your recruitment pipeline.",
+    valueCollaborative: "Collaborative Hiring Workflows",
+    valueCollaborativeText: "Enable recruiters, hiring managers, and HR teams to collaborate seamlessly throughout the hiring process.",
+    valueTalentPipeline: "Centralized Talent Pipeline Management",
+    valueTalentPipelineText: "Maintain a structured talent pool with candidate tracking, status updates, and pipeline stage management.",
 
-    whyTitle:
-      "Recruitment Built For Modern Teams",
+    // Flow
+    flow: "RECRUITMENT FLOW",
+    flowTitle: "A Smarter Recruitment Journey",
 
-    smartAutomation:
-      "Smart Automation",
+    // Microsoft
+    microsoft: "MICROSOFT ECOSYSTEM",
+    microsoftTitle: "Powered By Microsoft",
+    microsoftSubtitle: "TalentBridge is built entirely using Microsoft technologies, providing seamless integration with your existing enterprise infrastructure.",
+    msPowerApps: "PowerApps",
+    msPowerAppsDesc: "Create and manage recruitment requests.",
+    msPowerAutomate: "Power Automate",
+    msPowerAutomateDesc: "Automate approvals and workflows.",
+    msSharePoint: "SharePoint",
+    msSharePointDesc: "Centralized HR and candidate storage.",
+    msTeams: "Microsoft Teams",
+    msTeamsDesc: "Interview scheduling and collaboration.",
+    msPowerBI: "Power BI",
+    msPowerBIDesc: "Recruitment analytics and KPIs.",
+    msOutlook: "Outlook",
+    msOutlookDesc: "Automated interview and hiring emails.",
 
-    smartAutomationText:
-      "Automate recruitment workflows using Power Automate.",
+    // CTA
+    ctaTitle: "Build Faster Hiring Pipelines",
+    ctaText: "Make every hiring decision data-driven. Turn recruitment into a strategic advantage with TalentBridge.",
+    exploreCareers: "Explore Careers",
+    learnMore: "Learn More",
 
-    fasterHiring:
-      "Faster Hiring",
+    // Footer
+    footerDescription: "Transforming recruitment through automation, Microsoft integration, and intelligent hiring experiences built for modern organizations.",
+    productFeatures: "Features",
+    productPricing: "Pricing",
+    productCareers: "Careers",
+    companyAbout: "About",
+    companyContact: "Contact",
+    resourcesFAQ: "FAQ",
+    resourcesPrivacy: "Privacy",
+    builtInEgypt: "Proudly Built in Egypt",
+    copyright: "© 2026 TalentBridge. Built for the future of recruitment in Egypt.",
 
-    fasterHiringText:
-      "Accelerate approvals and hiring processes.",
+    // AI Assistant
+    aiTitle: "TalentBridge Assistant",
+    aiOnline: "Online",
+    aiPlaceholder: "Ask about TalentBridge...",
+    aiPowered: "Powered by TalentBridge Knowledge Base",
+    aiWelcome: "Welcome to TalentBridge Assistant. I can help you learn about our platform, features, Microsoft integrations, careers, and more. What would you like to know?",
+    aiNoResult: "I don't have information about that specific topic. I can help with questions about TalentBridge's features, Microsoft integrations, recruitment process, pricing, security, careers, and future roadmap.",
 
-    analytics:
-      "Recruitment Analytics",
+    // Careers
+    careersTitle: "Actively Recruiting",
+    careersSubtitle: "Explore exciting career opportunities and become part of our journey.",
+    careersEmpty: "No Active Recruiting",
+    careersEmptyText: "Check back again soon.",
+    careersApply: "Apply Now",
+    careersPowered: "Powered by TalentBridge",
+    careersType: "Full-Time",
+    careersLocation: "Egypt",
+    careersLevel: "Entry–Mid Level",
+    careersDescription: "Job Description:",
 
-    analyticsText:
-      "Gain hiring insights with Power BI dashboards.",
+    // Pricing
+    pricingPlans: "Pricing Plans",
+    pricingTitle: "Simple, Transparent Pricing",
+    pricingSubtitle: "Choose the plan that best fits your hiring needs and scale your recruitment effortlessly.",
+    pricingStarter: "Starter",
+    pricingStarterPrice: "EGP 3,999",
+    pricingStarterDesc: "For startups and small businesses beginning digital recruitment.",
+    pricingProfessional: "Professional",
+    pricingProfessionalPrice: "EGP 9,999",
+    pricingProfessionalDesc: "Built for growing HR teams needing automation and analytics.",
+    pricingEnterprise: "Enterprise",
+    pricingEnterprisePrice: "Custom",
+    pricingEnterpriseDesc: "For enterprises and government organizations requiring scale.",
+    pricingMonthly: "/month",
+    pricingPopular: "Most Popular",
+    pricingStart: "Start Now",
+    pricingGetStarted: "Get Started",
+    pricingBookDemo: "Book Demo",
+    pricingFaqTitle: "Frequently Asked Questions",
+    pricingFaq1q: "Can I switch plans later?",
+    pricingFaq1a: "Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately.",
+    pricingFaq2q: "Is there a free trial?",
+    pricingFaq2a: "We offer a 14-day free trial on all plans. No credit card required.",
+    pricingFaq3q: "Do you offer custom pricing?",
+    pricingFaq3a: "Yes, Enterprise plans are customized based on your organization's size and requirements.",
+    pricingFaq4q: "What support is included?",
+    pricingFaq4a: "Starter includes email support. Professional includes priority support. Enterprise includes a dedicated account manager.",
 
-    ecosystem:
-      "Microsoft Ecosystem",
+    // About
+    aboutBadge: "About TalentBridge",
+    aboutTitle: "Transforming Recruitment Through Technology",
+    aboutText: "TalentBridge is a modern Talent Acquisition CRM and Recruitment Management Platform built as part of a Microsoft-powered recruitment ecosystem. We digitize and automate the recruitment lifecycle while providing a seamless experience for recruiters, hiring managers, administrators, and candidates.",
+    aboutMission: "Our Mission",
+    aboutMissionText: "Transform recruitment through automation and Microsoft-powered solutions. We empower organizations to hire smarter, faster, and more efficiently by eliminating manual processes and enabling data-driven decision-making.",
+    aboutVision: "Our Vision",
+    aboutVisionText: "Become the leading recruitment technology platform in Egypt and the region. We aspire to set the standard for modern, automated, and intelligent hiring across the Middle East and North Africa.",
+    aboutHighlights: "Platform Highlights",
+    aboutHighlightsSub: "Everything you need to manage your recruitment lifecycle",
+    aboutHighlight1: "Recruitment Requests",
+    aboutHighlight1Text: "Submit and manage hiring requests with automated approval workflows.",
+    aboutHighlight2: "Candidate Management",
+    aboutHighlight2Text: "Track candidates through every stage of the recruitment pipeline.",
+    aboutHighlight3: "Interview Scheduling",
+    aboutHighlight3Text: "Schedule and manage interviews seamlessly through Microsoft Teams.",
+    aboutHighlight4: "Analytics",
+    aboutHighlight4Text: "Real-time dashboards and Power BI reports for data-driven hiring.",
+    aboutHighlight5: "Automation",
+    aboutHighlight5Text: "Power Automate workflows eliminate manual tasks and reduce hiring time.",
+    aboutHighlight6: "Hiring Workflows",
+    aboutHighlight6Text: "End-to-end hiring workflows from job request to offer acceptance.",
+    aboutEcosystem: "Built on Microsoft Ecosystem",
+    aboutEcosystemSub: "Seamlessly integrated with the tools your organization already uses",
+    aboutCtaTitle: "Ready to Transform Your Recruitment?",
+    aboutCtaText: "Join leading organizations that trust TalentBridge for their hiring needs.",
+    aboutCtaPricing: "View Pricing",
+    aboutCtaCareers: "Explore Careers",
 
-    ecosystemText:
-      "Integrated with Teams, SharePoint, Outlook and Power BI.",
-
-    flow:
-      "RECRUITMENT FLOW",
-
-    flowTitle:
-      "A Smarter Recruitment Journey",
-
-    microsoft:
-      "MICROSOFT ECOSYSTEM",
-
-    microsoftTitle:
-      "Powered By Microsoft",
-
-    microsoftSubtitle:
-      "TalentBridge is built entirely using Microsoft technologies.",
-
-    ctaTitle:
-      "Ready To Transform Hiring?",
-
-    ctaText:
-      "Experience a smarter recruitment process powered by automation.",
-
-    explore:
-      "Explore Platform"
+    // Apply
+    applyBack: "Back to Careers",
+    applyTitle: "Apply for this Role",
+    applyPersonalInfo: "Personal Information",
+    applyFullName: "Full Name *",
+    applyEmail: "Email *",
+    applyPhone: "Phone *",
+    applyGender: "Gender *",
+    applySelectGender: "Select Gender",
+    applyMale: "Male",
+    applyFemale: "Female",
+    applyUniversity: "University",
+    applyMajor: "Major",
+    applyExperience: "What is your previous experience in this field?",
+    applySkills: "Skills",
+    applyUpload: "Upload CV *",
+    applySubmit: "Submit Application",
+    applySubmitting: "Submitting...",
+    applySuccess: "Application Submitted",
+    applySuccessText: "Thank you for applying to",
+    applySuccessDesc: "Our recruitment team will review your application.",
+    applyViewCareers: "View Careers",
+    applyBackHome: "Back Home",
+    applyRequired: "is required",
   },
 
   AR: {
-
+    // Navigation
     home: "الرئيسية",
     careers: "الوظائف",
     pricing: "الأسعار",
-    login: "تسجيل الدخول",
-    getStarted: "ابدأ الآن",
+    about: "عن المنصة",
+    contact: "اتصل بنا",
 
-    heroBadge:
-      "تجربة توظيف جديدة",
+    // Hero
+    heroBadge: "منصة توظيف مؤسسية",
+    heroTitle: "توظيف أذكى. قرارات أسرع. مواهب أفضل.",
+    heroSubtitle: "تحول TalentBridge عملية التوظيف من خلال أتمتة مايكروسوفت وسير العمل الذكي وتجارب التوظيف السلسة.",
+    explorePlatform: "استكشف المنصة",
+    viewPricing: "عرض الأسعار",
 
-    heroTitle:
-      "توظيف أذكى. قرارات أسرع. مواهب أفضل.",
+    // Why Section
+    why: "لماذا TalentBridge",
+    whyTitle: "منصة توظيف حديثة للفرق المتطورة",
 
-    heroSubtitle:
-      "تحول TalentBridge عملية التوظيف من خلال أتمتة مايكروسوفت وسير العمل الذكي.",
+    smartAutomation: "أتمتة ذكية",
+    smartAutomationText: "أتمتة سير عمل التوظيف باستخدام Power Automate للتخلص من المهام اليدوية وتسريع التعيين.",
+    fasterHiring: "توظيف أسرع",
+    fasterHiringText: "تسريع الموافقات وعمليات التوظيف من خلال التوجيه الآلي والإشعارات الفورية.",
+    analytics: "تحليلات التوظيف",
+    analyticsText: "رؤى ذكية للتوظيف من خلال لوحات Power BI وتتبع مؤشرات الأداء الرئيسية.",
+    ecosystem: "منظومة مايكروسوفت",
+    ecosystemText: "تكامل كامل مع Teams وSharePoint وOutlook وPower BI لتجربة توظيف موحدة.",
 
-    trusted:
-      "موثوق به من قبل مؤسسات رائدة",
+    // CV Intelligence
+    cvTitle: "محرك ذكاء السير الذاتية",
+    cvSubtitle: "تقييم ومطابقة المرشحين بالذكاء الاصطناعي",
+    cvDescription: "يقوم محرك المطابقة الذكي بتحليل ملفات المرشحين مقابل متطلبات الوظيفة، مما ينتج درجات توافق ويكشف عن أقوى المرشحين.",
+    cvScore: "درجة التوافق",
+    cvMatch: "تحليل المطابقة",
+    cvRank: "ترتيب المرشحين",
 
-    why:
-      "لماذا TalentBridge",
+    // Value Pillars
+    valueEndToEnd: "عمليات توظيف شاملة",
+    valueEndToEndText: "إدارة دورة التوظيف الكاملة من طلب التعيين إلى قبول العرض ضمن منصة واحدة موحدة.",
+    valueCandidateMatching: "مطابقة ذكية للمرشحين",
+    valueCandidateMatchingText: "تحليل ملفات المرشحين بالذكاء الاصطناعي ومقارنة مؤهلاتهم مع متطلبات الوظائف بدقة.",
+    valueInterviewCoord: "تنسيق مقابلات آلي",
+    valueInterviewCoordText: "جدولة سلسة عبر Microsoft Teams مع تنسيق تقويم آلي وتذكيرات.",
+    valueDataDriven: "قرارات توظيف مبنية على البيانات",
+    valueDataDrivenText: "تحليلات فورية ولوحات Power BI توفر رؤى قابلة للتنفيذ حول مسار التوظيف.",
+    valueCollaborative: "سير عمل تعاوني للتوظيف",
+    valueCollaborativeText: "تمكين مسؤولي التوظيف ومديري التوظيف وفرق الموارد البشرية من التعاون بسلاسة.",
+    valueTalentPipeline: "إدارة مركزية لمسار المواهب",
+    valueTalentPipelineText: "الحفاظ على مجموعة مواهب منظمة مع تتبع المرشحين وتحديثات الحالة وإدارة مراحل المسار.",
 
-    whyTitle:
-      "منصة توظيف حديثة للفرق المتطورة",
+    // Flow
+    flow: "رحلة التوظيف",
+    flowTitle: "رحلة توظيف أكثر ذكاءً",
 
-    smartAutomation:
-      "أتمتة ذكية",
+    // Microsoft
+    microsoft: "منظومة مايكروسوفت",
+    microsoftTitle: "مدعوم بالكامل من مايكروسوفت",
+    microsoftSubtitle: "تم بناء TalentBridge بالكامل باستخدام تقنيات مايكروسوفت، مما يوفر تكاملاً سلساً مع البنية التحتية لمؤسستك.",
+    msPowerApps: "PowerApps",
+    msPowerAppsDesc: "إنشاء وإدارة طلبات التوظيف.",
+    msPowerAutomate: "Power Automate",
+    msPowerAutomateDesc: "أتمتة الموافقات وسير العمل.",
+    msSharePoint: "SharePoint",
+    msSharePointDesc: "تخزين مركزي للموارد البشرية والمرشحين.",
+    msTeams: "Microsoft Teams",
+    msTeamsDesc: "جدولة المقابلات والتعاون.",
+    msPowerBI: "Power BI",
+    msPowerBIDesc: "تحليلات التوظيف ومؤشرات الأداء.",
+    msOutlook: "Outlook",
+    msOutlookDesc: "رسائل البريد الإلكتروني الآلية للمقابلات والتوظيف.",
 
-    smartAutomationText:
-      "أتمتة سير عمل التوظيف باستخدام Power Automate.",
+    // CTA
+    ctaTitle: "ابنِ مسارات توظيف أسرع",
+    ctaText: "اجعل كل قرار توظيف مبنياً على البيانات. حوّل التوظيف إلى ميزة استراتيجية مع TalentBridge.",
+    exploreCareers: "استعرض الوظائف",
+    learnMore: "اعرف المزيد",
 
-    fasterHiring:
-      "توظيف أسرع",
+    // Footer
+    footerDescription: "تحويل التوظيف من خلال الأتمتة والتكامل مع مايكروسوفت وتجارب التوظيف الذكية المصممة للمؤسسات الحديثة.",
+    productFeatures: "المميزات",
+    productPricing: "الأسعار",
+    productCareers: "الوظائف",
+    companyAbout: "عن المنصة",
+    companyContact: "اتصل بنا",
+    resourcesFAQ: "الأسئلة الشائعة",
+    resourcesPrivacy: "الخصوصية",
+    builtInEgypt: "صنع بفخر في مصر",
+    copyright: "© 2026 TalentBridge. بنيت لمستقبل التوظيف في مصر.",
 
-    fasterHiringText:
-      "تسريع الموافقات وعمليات التوظيف.",
+    // AI Assistant
+    aiTitle: "مساعد TalentBridge",
+    aiOnline: "متصل",
+    aiPlaceholder: "اسأل عن TalentBridge...",
+    aiPowered: "مدعوم بقاعدة معرفة TalentBridge",
+    aiWelcome: "مرحباً بك في مساعد TalentBridge. يمكنني مساعدتك في التعرف على منصتنا ومميزاتها وتكاملات مايكروسوفت والوظائف والمزيد. ماذا تريد أن تعرف؟",
+    aiNoResult: "لا توجد لدي معلومات حول هذا الموضوع المحدد. يمكنني المساعدة في أسئلة حول مميزات TalentBridge وتكاملات مايكروسوفت وعملية التوظيف والأسعار والأمان والوظائف والخطة المستقبلية.",
 
-    analytics:
-      "تحليلات التوظيف",
+    // Careers
+    careersTitle: "توظيف نشط",
+    careersSubtitle: "استكشف فرص وظيفية مثيرة وكن جزءاً من رحلتنا.",
+    careersEmpty: "لا يوجد توظيف نشط حالياً",
+    careersEmptyText: "تفقد مرة أخرى قريباً.",
+    careersApply: "تقدم الآن",
+    careersPowered: "مدعوم من TalentBridge",
+    careersType: "دوام كامل",
+    careersLocation: "مصر",
+    careersLevel: "مبتدئ–متوسط",
+    careersDescription: "وصف الوظيفة:",
 
-    analyticsText:
-      "رؤى ذكية للتوظيف من خلال لوحات Power BI.",
+    // Pricing
+    pricingPlans: "خطط الأسعار",
+    pricingTitle: "أسعار بسيطة وشفافة",
+    pricingSubtitle: "اختر الخطة التي تناسب احتياجات التوظيف لديك وقم بتوسيع نطاق التوظيف بسهولة.",
+    pricingStarter: "المبتدئ",
+    pricingStarterPrice: "3,999 جنيه",
+    pricingStarterDesc: "للشركات الناشئة والصغيرة التي تبدأ التوظيف الرقمي.",
+    pricingProfessional: "المحترف",
+    pricingProfessionalPrice: "9,999 جنيه",
+    pricingProfessionalDesc: "مصمم لفرق الموارد البشرية المتنامية التي تحتاج إلى الأتمتة والتحليلات.",
+    pricingEnterprise: "المؤسسات",
+    pricingEnterprisePrice: "مخصص",
+    pricingEnterpriseDesc: "للمؤسسات والجهات الحكومية التي تتطلب التوسع.",
+    pricingMonthly: "/شهرياً",
+    pricingPopular: "الأكثر طلباً",
+    pricingStart: "ابدأ الآن",
+    pricingGetStarted: "ابدأ",
+    pricingBookDemo: "احجز عرضاً",
+    pricingFaqTitle: "الأسئلة الشائعة",
+    pricingFaq1q: "هل يمكنني تغيير الخطتي لاحقاً؟",
+    pricingFaq1a: "نعم، يمكنك ترقية أو تخفيض خطتك في أي وقت. التغييرات تسري فوراً.",
+    pricingFaq2q: "هل توجد نسخة تجريبية مجانية؟",
+    pricingFaq2a: "نقدم نسخة تجريبية مجانية لمدة 14 يوماً على جميع الخطط. لا حاجة لبطاقة ائتمان.",
+    pricingFaq3q: "هل تقدمون أسعاراً مخصصة؟",
+    pricingFaq3a: "نعم، خطط المؤسسات مخصصة حسب حجم المؤسسة ومتطلباتها.",
+    pricingFaq4q: "ما هو الدعم المقدم؟",
+    pricingFaq4a: "خطة المبتدئ تشمل دعم البريد الإلكتروني. المحترف يشمل دعم ذي أولوية. المؤسسات تشمل مدير حساب مخصص.",
 
-    ecosystem:
-      "منظومة مايكروسوفت",
+    // About
+    aboutBadge: "عن TalentBridge",
+    aboutTitle: "تحويل التوظيف من خلال التكنولوجيا",
+    aboutText: "TalentBridge هي منصة حديثة لإدارة علاقات التوظيف وإدارة التعيينات مبنية كجزء من نظام توظيف مدعوم من مايكروسوفت. نعمل على رقمنة وأتمتة دورة التوظيف مع توفير تجربة سلسة لمسؤولي التوظيف ومديري التوظيف والمرشحين.",
+    aboutMission: "رسالتنا",
+    aboutMissionText: "تحويل التوظيف من خلال الأتمتة والحلول المدعومة من مايكروسوفت. تمكين المؤسسات من التعيين بشكل أذكى وأسرع وأكثر كفاءة.",
+    aboutVision: "رؤيتنا",
+    aboutVisionText: "أن نصبح المنصة الرائدة في تكنولوجيا التوظيف في مصر والمنطقة، ونضع المعيار للتوظيف الحديث والآلي والذكي.",
+    aboutHighlights: "أبرز مميزات المنصة",
+    aboutHighlightsSub: "كل ما تحتاجه لإدارة دورة التوظيف الخاصة بك",
+    aboutHighlight1: "طلبات التوظيف",
+    aboutHighlight1Text: "إرسال وإدارة طلبات التعيين مع سير عمل موافقات آلي.",
+    aboutHighlight2: "إدارة المرشحين",
+    aboutHighlight2Text: "تتبع المرشحين في كل مرحلة من مراحل مسار التوظيف.",
+    aboutHighlight3: "جدولة المقابلات",
+    aboutHighlight3Text: "جدولة وإدارة المقابلات بسلاسة من خلال Microsoft Teams.",
+    aboutHighlight4: "التحليلات",
+    aboutHighlight4Text: "لوحات معلومات فورية وتقارير Power BI لاتخاذ قرارات توظيف مبنية على البيانات.",
+    aboutHighlight5: "الأتمتة",
+    aboutHighlight5Text: "سير عمل Power Automate يلغي المهام اليدوية ويقلل وقت التعيين.",
+    aboutHighlight6: "سير عمل التعيين",
+    aboutHighlight6Text: "سير عمل توظيف شامل من طلب الوظيفة إلى قبول العرض.",
+    aboutEcosystem: "مبني على نظام مايكروسوفت",
+    aboutEcosystemSub: "متكامل بسلاسة مع الأدوات التي تستخدمها مؤسستك بالفعل",
+    aboutCtaTitle: "هل أنت مستعد لتطوير التوظيف؟",
+    aboutCtaText: "انضم إلى المؤسسات الرائدة التي تثق في TalentBridge لاحتياجات التوظيف.",
+    aboutCtaPricing: "عرض الأسعار",
+    aboutCtaCareers: "استكشف الوظائف",
 
-    ecosystemText:
-      "تكامل كامل مع Teams وSharePoint وOutlook وPower BI.",
-
-    flow:
-      "رحلة التوظيف",
-
-    flowTitle:
-      "رحلة توظيف أكثر ذكاءً",
-
-    microsoft:
-      "منظومة مايكروسوفت",
-
-    microsoftTitle:
-      "مدعوم بالكامل من مايكروسوفت",
-
-    microsoftSubtitle:
-      "تم بناء TalentBridge بالكامل باستخدام تقنيات مايكروسوفت.",
-
-    ctaTitle:
-      "جاهز لتطوير التوظيف؟",
-
-    ctaText:
-      "اختبر تجربة توظيف ذكية مدعومة بالأتمتة.",
-
-    explore:
-      "استكشف المنصة"
+    // Apply
+    applyBack: "العودة إلى الوظائف",
+    applyTitle: "تقدم لهذه الوظيفة",
+    applyPersonalInfo: "المعلومات الشخصية",
+    applyFullName: "الاسم الكامل *",
+    applyEmail: "البريد الإلكتروني *",
+    applyPhone: "رقم الهاتف *",
+    applyGender: "الجنس *",
+    applySelectGender: "اختر الجنس",
+    applyMale: "ذكر",
+    applyFemale: "أنثى",
+    applyUniversity: "الجامعة",
+    applyMajor: "التخصص",
+    applyExperience: "ما هي خبرتك السابقة في هذا المجال؟",
+    applySkills: "المهارات",
+    applyUpload: "رفع السيرة الذاتية *",
+    applySubmit: "تقديم الطلب",
+    applySubmitting: "جاري التقديم...",
+    applySuccess: "تم تقديم الطلب",
+    applySuccessText: "شكراً لتقديمك على وظيفة",
+    applySuccessDesc: "سيراجع فريق التوظيف طلبك.",
+    applyViewCareers: "عرض الوظائف",
+    applyBackHome: "العودة للرئيسية",
+    applyRequired: "مطلوب",
   }
 };
 
